@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "title": "MarkKiller · 阅读版演示",
+  "scope": "1篇项目原创指南 · 展示阅读结构与交互，非真实平台采集案例。",
+  "items": [
+    {
+      "id": "markkiller-reading-guide",
+      "title": "怎样读一份内容蒸馏笔记",
+      "reading_title": "从理解问题，到带着依据作出判断",
+      "platform": "项目文档",
+      "kind": "article",
+      "author": "MarkKiller 项目",
+      "url": "https://github.com/PASSIONYOUNGZ/MarkKiller/blob/main/docs/reading-guide.md",
+      "date": "2026-11-02",
+      "topic": "阅读与理解",
+      "summary": "用问题、关系与依据三个角度，理解怎样阅读和使用一份深度解读。",
+      "status": "deep",
+      "coverage": "本项目原创指南的阅读器演示；非外部视频采集。",
+      "cover": {
+        "path": "cover.png",
+        "caption": "MarkKiller 项目宣传图 · 本篇原创指南配图",
+        "source_url": "https://github.com/PASSIONYOUNGZ/MarkKiller/blob/main/docs/reading-guide.md"
+      },
+      "takeaway": "先看**问题与背景**，再看**过程与关系**，最后带着**依据和限制**决定是否借鉴。读懂一份笔记，是判断的起点。",
+      "introduction": [
+        "收藏的内容往往来自不同的时刻和需求。再次打开时，我们已经离开原来的语境；因此，一份解读要先帮助读者找回作者在解决什么，再解释实际做法为什么值得注意。",
+        "这篇原创指南把阅读分成三个相互关联的角度：问题决定关注点，关系帮助组织细节，依据约束可以得出的结论。下面的结构图用来导航，它不是必须逐项完成的学习打卡表。"
+      ],
+      "diagram": {
+        "kind": "map",
+        "title": "用三个角度，把内容接成理解",
+        "caption": "整理者根据本项目原创指南归纳；三个角度相互补充，点击可进入对应章节。",
+        "after_section": 0,
+        "nodes": [
+          {
+            "label": "从问题进入",
+            "detail": "先知道对象和处境，再判断材料是否相关。",
+            "section": 1
+          },
+          {
+            "label": "看清关系",
+            "detail": "区分先后动作与并列考虑，让图真正解释内容。",
+            "section": 2
+          },
+          {
+            "label": "回到依据",
+            "detail": "检验结论的适用范围，再决定自己的尝试。",
+            "section": 3
+          }
+        ]
+      },
+      "sections": [
+        {
+          "heading": "先找回问题，细节才有位置",
+          "paragraphs": [
+            "读一份解读时，可以先用简介和重点判断相关性，再从整体讲解找回背景，最后进入具体实例。这样的顺序，是为了让读者知道后面每个动作在回答什么问题。",
+            "以指南里的抽象字幕情境为例，只记住“用错词库”还不足以理解纠错。可疑词从何而来、声音和画面分别提供什么线索、什么时候需要人工判断，这些连接决定了建议是否可用。**方法的价值在于动作之间的理由，而不只是工具名。**"
+          ],
+          "evidence": [
+            {
+              "label": "原文：从问题进入",
+              "url": "https://github.com/PASSIONYOUNGZ/MarkKiller/blob/main/docs/reading-guide.md#从问题进入"
+            }
+          ]
+        },
+        {
+          "heading": "图的作用，是把关系讲得更清楚",
+          "paragraphs": [
+            "有先后依赖的步骤可以画成流程，并列的考虑则适合关系图。图形的箭头和分支会给读者暗示，所以表达方式必须与原作中的关系一致。",
+            "指南举出的“原作、解释、不确定”是三种归属。它们应该帮助读者区分证据层次，而不是被画成一套必然通向成功的操作步骤。对照正文看图时，重点检查每个节点为何出现，而不是节点数量是否足够多。"
+          ],
+          "evidence": [
+            {
+              "label": "原文：让图表达关系",
+              "url": "https://github.com/PASSIONYOUNGZ/MarkKiller/blob/main/docs/reading-guide.md#让图表达关系"
+            }
+          ]
+        },
+        {
+          "heading": "准备借鉴时，再检查依据与条件",
+          "paragraphs": [
+            "一个人的单次实践可以提供尝试方向，但不能直接变成适用于所有人的结论。准备借鉴前，需要同时比较证据支持的范围和自己面对的条件。",
+            "可以先用自己的话复述问题、做法、结果与限制，再选一个小动作验证。这里给的是项目指南中的阅读建议，不是已经做过效果评估的学习方法。**生成了一份笔记，与真正掌握内容，是不同的状态。**"
+          ],
+          "evidence": [
+            {
+              "label": "原文：把理解接回依据",
+              "url": "https://github.com/PASSIONYOUNGZ/MarkKiller/blob/main/docs/reading-guide.md#把理解接回依据"
+            }
+          ]
+        }
+      ],
+      "practice": [
+        "任选一篇你读过的材料，写下它的问题、关键动作、结果和一条限制；看看哪些内容仍需要回到来源确认。"
+      ],
+      "limitations": [
+        "这是项目原创说明的阅读器演示，没有执行外部采集、视频转写或学习效果实验。"
+      ]
+    }
+  ]
+}

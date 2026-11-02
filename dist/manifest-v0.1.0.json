@@ -1,0 +1,55 @@
+{
+  "name": "markkiller",
+  "version": "0.1.0",
+  "zip_sha256": "1fa49f06aa26242a8b75638fce87abcd6cb87dd11dc66a188dd11111e8ab9b15",
+  "files": {
+    "SKILL.md": {
+      "bytes": 5448,
+      "sha256": "d7a2feae5636e1fd401306c1bf18cd22a156df75a3c10db669268a0601cb4109"
+    },
+    "agents/openai.yaml": {
+      "bytes": 302,
+      "sha256": "75f6cb4c6119fcbe49a40ff3e7b766a38d90da143b9d06d9de3b5be0f2c4e1bd"
+    },
+    "assets/project-developer-avatar.jpg": {
+      "bytes": 20886,
+      "sha256": "9e373080a70a376042dc2607578187af8b965a340416833097f14fc1f0425ce4"
+    },
+    "assets/project-developer.json": {
+      "bytes": 468,
+      "sha256": "e2a44c578d1768fcd4041c3a213f984de75aa7f204910530565d987e55be07c5"
+    },
+    "assets/reader.css": {
+      "bytes": 13508,
+      "sha256": "de6116019ee03f257d69e799388d1253ae26d3dd2cb77a23bf67de07b84aa95c"
+    },
+    "assets/reader.js": {
+      "bytes": 4651,
+      "sha256": "aae4d962267d41da9994ac83bae6d33e0905a3411bbc56e0fdd120b7dfc4e930"
+    },
+    "references/data.md": {
+      "bytes": 3695,
+      "sha256": "faaf6bbf6eff2fbce33536b961d0c64ded4042bee7b9d7f4e170733b965bb9f7"
+    },
+    "references/delivery.md": {
+      "bytes": 3943,
+      "sha256": "344459d992ba77eb7472b5d6ba7664703303fa8238dd69ca674bb35fb26a9f08"
+    },
+    "references/platforms.md": {
+      "bytes": 3328,
+      "sha256": "ca2c7b2da4d05c1974dbc687e13aeefd8dfd2148383989c3c634fe9ffbb52ee9"
+    },
+    "references/quality.md": {
+      "bytes": 4240,
+      "sha256": "5228247eac5967345253de53bcb8fa508c6830bb45e5461d90fedbd0b1701baa"
+    },
+    "scripts/check_review.py": {
+      "bytes": 3682,
+      "sha256": "ee2628c443819a59e506bd844151fa474827dd29fe35e28367b5c523a4b04090"
+    },
+    "scripts/reader.py": {
+      "bytes": 18127,
+      "sha256": "1eb8856bf57ba537d1fc12a8275ff03449eb9248bd02a82d8ce87718fbbac093"
+    }
+  }
+}
