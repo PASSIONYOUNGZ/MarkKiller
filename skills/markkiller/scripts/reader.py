@@ -122,8 +122,11 @@ def date_key(value):
     except ValueError:
         return ''
 
-def build(d, base, *, index_only=False, item_links=None):
+def build(d, base, *, index_only=False, item_links=None, collection_index=None):
     stats=validate(d,base)
+    if collection_index is not None and not re.fullmatch(r'[\w-]+\.html(?:#(?:map|home))?',collection_index):
+        raise ValueError('总览入口只允许本目录HTML及map/home锚点')
+    map_target=collection_index or '#map'
     topics=list(dict.fromkeys(i['topic'] for i in d['items']))
     rows=[]; cards=[]
     labels={'deep':'深读','brief':'简读','pending':'待核'}
@@ -201,10 +204,10 @@ def build(d, base, *, index_only=False, item_links=None):
     if stats['video_works']:scope_parts.append(f'{stats["video_works"]} 部视频')
     if stats['article_works']:scope_parts.append(f'{stats["article_works"]} 篇图文')
     scope_stats=' · '.join(scope_parts)
-    return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>{esc(d['title'])}</title><style>{css}</style></head><body><aside><a class="brand" href="#home">MarkKiller</a><p>收藏夹杀手 · 让收藏不止于收藏。</p><nav><a href="#map">内容地图</a>{'<a href="#readings">深度解读</a>' if not index_only else ''}{'<a href="#connections">关联理解</a>' if connections else ''}</nav><div class="developer">{developer}</div></aside><main><header id="home" class="hero"><span class="eyebrow">COLLECTION → UNDERSTANDING</span><h1>{esc(d['title'])}</h1><p>{esc(d['scope'])}</p><p class="meta">{scope_stats}</p></header><section id="map"><h2>内容汇总</h2>{view_controls}<details class="filter-tools"><summary>搜索与展开选项</summary><div class="controls"><label>搜索<input id="search" type="search" aria-label="搜索" placeholder="标题、作者、内容"></label><label>主题<select id="topic" aria-label="主题"><option value="">全部主题</option>{options}</select></label><button id="reset">清除筛选</button>{'<button id="expand">展开当前结果</button><button id="collapse">收起当前结果</button>' if not index_only else ''}</div></details><p id="count" role="status"></p><p id="empty" hidden>没有匹配内容，清除筛选即可恢复。</p>{index}</section><div id="readings">{''.join(cards)}</div>{connections}<footer>来源可回查 · 解读不代表已掌握 · 阅读正文与图片可离线使用</footer></main><dialog id="image-dialog" aria-label="原作画面放大"><button id="close-image" autofocus>关闭 ×</button><img alt=""><p></p></dialog><script>{js}</script></body></html>'''
+    return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>{esc(d['title'])}</title><style>{css}</style></head><body><aside><a class="brand" href="#home">MarkKiller</a><p>收藏夹杀手 · 让收藏不止于收藏。</p><nav><a href="{esc(map_target)}">内容地图</a>{'<a href="#readings">深度解读</a>' if not index_only else ''}{'<a href="#connections">关联理解</a>' if connections else ''}</nav><div class="developer">{developer}</div></aside><main><header id="home" class="hero"><span class="eyebrow">COLLECTION → UNDERSTANDING</span><h1>{esc(d['title'])}</h1><p>{esc(d['scope'])}</p><p class="meta">{scope_stats}</p></header><section id="map"><h2>内容汇总</h2>{view_controls}<details class="filter-tools"><summary>搜索与展开选项</summary><div class="controls"><label>搜索<input id="search" type="search" aria-label="搜索" placeholder="标题、作者、内容"></label><label>主题<select id="topic" aria-label="主题"><option value="">全部主题</option>{options}</select></label><button id="reset">清除筛选</button>{'<button id="expand">展开当前结果</button><button id="collapse">收起当前结果</button>' if not index_only else ''}</div></details><p id="count" role="status"></p><p id="empty" hidden>没有匹配内容，清除筛选即可恢复。</p>{index}</section><div id="readings">{''.join(cards)}</div>{connections}<footer>来源可回查 · 解读不代表已掌握 · 阅读正文与图片可离线使用</footer></main><dialog id="image-dialog" aria-label="原作画面放大"><button id="close-image" autofocus>关闭 ×</button><img alt=""><p></p></dialog><script>{js}</script></body></html>'''
 
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('command',choices=['validate','build']); p.add_argument('--input',required=True); p.add_argument('--output')
+    p=argparse.ArgumentParser(); p.add_argument('command',choices=['validate','build']); p.add_argument('--input',required=True); p.add_argument('--output'); p.add_argument('--collection-index',help='独立单篇返回的同目录总览，如index.html#map')
     args=p.parse_args(); source=Path(args.input).resolve(); d=json.loads(source.read_text(encoding='utf-8-sig'))
     stats=validate(d,source.parent)
     if args.command=='build':
@@ -212,7 +215,7 @@ def main():
         dest=Path(args.output)
         if dest.exists(): dest=dest.with_name(dest.stem+'.proposed'+dest.suffix)
         if dest.exists(): raise ValueError('候选也已存在，请指定新输出文件以保留已有修改')
-        dest.parent.mkdir(parents=True,exist_ok=True); dest.write_text(build(d,source.parent),encoding='utf-8'); stats['output']=str(dest.resolve())
+        dest.parent.mkdir(parents=True,exist_ok=True); dest.write_text(build(d,source.parent,collection_index=args.collection_index),encoding='utf-8'); stats['output']=str(dest.resolve())
     print(json.dumps(stats,ensure_ascii=False))
 
 if __name__=='__main__': main()

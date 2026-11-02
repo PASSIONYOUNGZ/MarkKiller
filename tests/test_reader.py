@@ -38,6 +38,17 @@ class ReaderTests(unittest.TestCase):
         output=reader.build(self.data,self.base)
         self.assertNotIn('<script>alert(1)</script>',output)
         self.assertIn('&lt;script&gt;',output)
+    def test_article_returns_to_collection_without_browser_history(self):
+        output=reader.build(self.data,self.base,collection_index='index.html#map')
+        self.assertIn('<a href="index.html#map">内容地图</a>',output)
+        self.assertNotIn('<a href="#map">内容地图</a>',output)
+    def test_collection_keeps_local_map_navigation(self):
+        output=reader.build(self.data,self.base)
+        self.assertIn('<a href="#map">内容地图</a>',output)
+    def test_collection_navigation_rejects_external_or_script_targets(self):
+        for target in ['javascript:alert(1)','//example.com','https://example.com/index.html','../index.html','index.html\" onclick=\"bad']:
+            with self.subTest(target=target),self.assertRaises(ValueError):
+                reader.build(self.data,self.base,collection_index=target)
     def test_unsafe_source_link_is_rejected(self):
         self.data['items'][0]['url']='javascript:alert(1)'
         with self.assertRaises(ValueError):reader.validate(self.data,self.base)

@@ -79,7 +79,7 @@ MarkKiller 是给 Agent 使用的 Skill，包含工作指引、阅读器与审�
 请从 https://github.com/PASSIONYOUNGZ/MarkKiller 安装 skills/markkiller 这个 Skill。
 ```
 
-**手动安装：**从 [Releases](https://github.com/PASSIONYOUNGZ/MarkKiller/releases/latest) 下载 `markkiller-v0.2.0.zip`，解压后把其中的 `markkiller` 文件夹放进宿主的技能目录。Codex 的用户安装位置可使用 `$CODEX_HOME/skills/markkiller`，未设置 `CODEX_HOME` 时通常为 `~/.codex/skills/markkiller`。新开对话后检查是否能找到 `$markkiller`。[官方目录示例](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex)
+**手动安装：**从 [Releases](https://github.com/PASSIONYOUNGZ/MarkKiller/releases/latest) 下载 `markkiller-v0.2.1.zip`，解压后把其中的 `markkiller` 文件夹放进宿主的技能目录。Codex 的用户安装位置可使用 `$CODEX_HOME/skills/markkiller`，未设置 `CODEX_HOME` 时通常为 `~/.codex/skills/markkiller`。新开对话后检查是否能找到 `$markkiller`。[官方目录示例](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex)
 
 安装包只包含 Skill。宣传图、公开文档、开发测试和演示文件留在仓库中。使用其他支持 `SKILL.md` 的 Agent 时，按对应宿主的安装方式操作；目前没有做各宿主的完整兼容性测试。
 
@@ -116,7 +116,7 @@ MarkKiller 是给 Agent 使用的 Skill，包含工作指引、阅读器与审�
 python -X utf8 skills/markkiller/scripts/reader.py validate --input docs/demo/reader.json
 python -X utf8 skills/markkiller/scripts/reader.py build --input docs/demo/reader.json --output demo-local.html
 python -X utf8 -m unittest discover -s tests -v
-python -X utf8 tools/package.py --version 0.2.0
+python -X utf8 tools/package.py --version 0.2.1
 ```
 
 生成器只渲染已准备好的阅读数据；识别筛选、材料获取、理解、写作和语义审阅由宿主 Agent 按 Skill 执行。`check_selection.py` 校验收藏来源、正文依据、去重与阅读对应，不是关键词分类器。已有 HTML 默认另存 `.proposed.html`，避免覆盖手改内容。[筛选合同](skills/markkiller/references/selection.md) · [在线发布](skills/markkiller/references/publishing.md) · [数据结构](skills/markkiller/references/data.md) · [质量标准](skills/markkiller/references/quality.md)
