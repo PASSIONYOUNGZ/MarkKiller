@@ -11,7 +11,8 @@ ROOT=Path(__file__).resolve().parents[1]
 FILES=['SKILL.md','agents/openai.yaml','assets/project-developer-avatar.jpg',
        'assets/project-developer.json','assets/reader.css','assets/reader.js',
        'references/data.md','references/delivery.md','references/platforms.md',
-       'references/quality.md','scripts/check_review.py','scripts/reader.py']
+       'references/quality.md','references/selection.md','references/publishing.md',
+       'scripts/check_selection.py','scripts/check_review.py','scripts/reader.py']
 
 def package(version):
     if not re.fullmatch(r'\d+\.\d+\.\d+',version):raise ValueError('Use a semantic version, such as 0.1.0')

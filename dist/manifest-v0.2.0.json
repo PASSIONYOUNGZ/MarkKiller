@@ -1,0 +1,67 @@
+{
+  "name": "markkiller",
+  "version": "0.2.0",
+  "zip_sha256": "9781ba332656f9b60e12537ca9ab28c25b265fabd90cca90ccb1090c1c679216",
+  "files": {
+    "SKILL.md": {
+      "bytes": 6085,
+      "sha256": "3444655057a3adc6d6cc6113790f4b6b4929449b13b6aa6d7081328a08f4c835"
+    },
+    "agents/openai.yaml": {
+      "bytes": 303,
+      "sha256": "f130aca52d129f87de20c70e25eee01b571ddf81e6484158ceff805060202532"
+    },
+    "assets/project-developer-avatar.jpg": {
+      "bytes": 20886,
+      "sha256": "9e373080a70a376042dc2607578187af8b965a340416833097f14fc1f0425ce4"
+    },
+    "assets/project-developer.json": {
+      "bytes": 468,
+      "sha256": "e2a44c578d1768fcd4041c3a213f984de75aa7f204910530565d987e55be07c5"
+    },
+    "assets/reader.css": {
+      "bytes": 13508,
+      "sha256": "de6116019ee03f257d69e799388d1253ae26d3dd2cb77a23bf67de07b84aa95c"
+    },
+    "assets/reader.js": {
+      "bytes": 4651,
+      "sha256": "aae4d962267d41da9994ac83bae6d33e0905a3411bbc56e0fdd120b7dfc4e930"
+    },
+    "references/data.md": {
+      "bytes": 3695,
+      "sha256": "faaf6bbf6eff2fbce33536b961d0c64ded4042bee7b9d7f4e170733b965bb9f7"
+    },
+    "references/delivery.md": {
+      "bytes": 3943,
+      "sha256": "344459d992ba77eb7472b5d6ba7664703303fa8238dd69ca674bb35fb26a9f08"
+    },
+    "references/platforms.md": {
+      "bytes": 3328,
+      "sha256": "ca2c7b2da4d05c1974dbc687e13aeefd8dfd2148383989c3c634fe9ffbb52ee9"
+    },
+    "references/publishing.md": {
+      "bytes": 1819,
+      "sha256": "90544722c06a9c22481444563b61a79f065a995c7002d8fbba58cfc692f36c88"
+    },
+    "references/quality.md": {
+      "bytes": 4240,
+      "sha256": "5228247eac5967345253de53bcb8fa508c6830bb45e5461d90fedbd0b1701baa"
+    },
+    "references/selection.md": {
+      "bytes": 3861,
+      "sha256": "820555054117c9dab76e10d86418424308726996c13b47d67e70d581a5f1f224"
+    },
+    "scripts/check_review.py": {
+      "bytes": 3682,
+      "sha256": "ee2628c443819a59e506bd844151fa474827dd29fe35e28367b5c523a4b04090"
+    },
+    "scripts/check_selection.py": {
+      "bytes": 4939,
+      "sha256": "cc51118ba0cac05642ea6ae72601d7940e8a865653aed9df4d0be8991f5199de"
+    },
+    "scripts/reader.py": {
+      "bytes": 18127,
+      "sha256": "1eb8856bf57ba537d1fc12a8275ff03449eb9248bd02a82d8ce87718fbbac093"
+    }
+  }
+}

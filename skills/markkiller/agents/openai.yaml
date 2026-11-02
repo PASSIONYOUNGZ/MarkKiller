@@ -1,4 +1,4 @@
 interface:
   display_name: "MarkKiller · 收藏夹杀手"
-  short_description: "将收藏夹视频和指定图文蒸馏为有来源、实例与边界的深度解读离线阅读版"
-  default_prompt: "使用 $markkiller 蒸馏我的收藏夹视频，先处理少量内容并生成深度解读 HTML。"
+  short_description: "按主题识别筛选收藏视频，生成有来源、逻辑图与实例的深度解读HTML"
+  default_prompt: "使用 $markkiller 从我的收藏夹筛选感兴趣的主题，先解读少量独立视频并生成 HTML。"
